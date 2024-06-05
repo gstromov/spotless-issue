@@ -7,7 +7,7 @@ search_path to my_schema;
 create
   view requirements_hierarchy as with recursive hierarchy as(
     select
-      requirement.id requirement_id,
+      distinct requirement.id requirement_id,
       null::uuid parent_requirement_id,
       0 as depth,
       requirement.created_at
